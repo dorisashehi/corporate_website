@@ -20,22 +20,15 @@ export default function StrategicPartnership() {
       />
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <AnimateIn direction="left" className="flex justify-center">
-            <img
-              src={images.newsletterFigure}
-              alt="Strategic IT advisory"
-              className="max-w-md w-full h-auto"
-            />
-          </AnimateIn>
           <div>
-            <AnimateIn delay={100}>
+            <AnimateIn direction="left" delay={100}>
               <p className="text-lg text-brand-muted mb-8 leading-relaxed">
                 Through ongoing advisory and strategic planning, we assist with:
               </p>
             </AnimateIn>
             <ul className="grid sm:grid-cols-2 gap-4 list-none m-0 p-0 mb-8">
               {advisory.map(({ icon: Icon, text }, i) => (
-                <AnimateIn key={text} delay={150 + i * 60}>
+                <AnimateIn key={text} delay={150 + i * 60} direction="left">
                   <li className="flex items-center gap-3 p-4 bg-brand-light rounded-xl h-full">
                     <span className="w-12 h-12 flex items-center justify-center rounded-full bg-brand-navy text-white shrink-0">
                       <Icon className="text-xl" />
@@ -45,12 +38,19 @@ export default function StrategicPartnership() {
                 </AnimateIn>
               ))}
             </ul>
-            <AnimateIn delay={500}>
+            <AnimateIn direction="left" delay={500}>
               <p className="text-brand-muted leading-relaxed">
                 This strategic guidance ensures technology decisions support long-term business goals.
               </p>
             </AnimateIn>
           </div>
+          <AnimateIn direction="right" className="flex justify-center lg:justify-end">
+            <img
+              src={images.newsletterFigure}
+              alt="Strategic IT advisory"
+              className="max-w-md w-full h-auto"
+            />
+          </AnimateIn>
         </div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-import { img } from '../utils/images';
+import { images } from '../utils/images';
 
 export default function Footer() {
   return (
@@ -7,19 +7,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div className="lg:col-span-2">
             <div className="inline-block bg-white rounded-lg px-4 py-3 mb-4">
-              <img
-                src={img('infomanage-logo.png')}
-                alt="InfoManage"
-                className="h-12 w-auto"
-              />
+              <img src={images.logo} alt="InfoManage" className="h-10 w-auto" />
             </div>
             <p className="text-white/80 text-sm leading-relaxed max-w-md">
               Structured IT management for businesses that depend on technology. Serving
               organizations since 1995.
             </p>
-            <p className="text-sm mt-4 text-white/70 italic">
-              Keeps you... Up and Running!®
-            </p>
+            <p className="text-sm mt-4 text-white/70 italic">Keeps you... Up and Running!®</p>
           </div>
 
           <div>

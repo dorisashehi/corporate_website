@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { BiMenu, BiX } from 'react-icons/bi';
-import { img } from '../utils/images';
+import { images } from '../utils/images';
 
 const navLinks = [
   { href: '#outsourced-it', label: 'Services' },
@@ -24,15 +24,15 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-[997] transition-all duration-300 ${
-        scrolled ? 'bg-brand-navy shadow-lg py-3' : 'bg-white/95 backdrop-blur-sm py-4 shadow-sm'
+        scrolled ? 'bg-brand-navy shadow-lg py-2' : 'bg-white/95 backdrop-blur-sm py-3 shadow-sm'
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between gap-4">
         <a href="#hero" className="shrink-0">
           <img
-            src={img('infomanage-logo.png')}
+            src={images.logo}
             alt="InfoManage — Keeps you... Up and Running!"
-            className="h-10 md:h-12 w-auto"
+            className="h-9 md:h-11 w-auto"
           />
         </a>
 

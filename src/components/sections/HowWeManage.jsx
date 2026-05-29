@@ -1,14 +1,9 @@
-import {
-  BiTrendingUp,
-  BiWrench,
-  BiShield,
-  BiCheckCircle,
-} from 'react-icons/bi';
+import { BiTrendingUp, BiWrench, BiShield, BiCheckCircle } from 'react-icons/bi';
+import AnimateIn from '../AnimateIn';
 import SectionTitle from '../SectionTitle';
 
 const pillars = [
   {
-    id: 'fix',
     label: 'Fix',
     tagline: 'Rapid issue resolution keeps users productive and minimizes disruption.',
     color: 'bg-brand-navy',
@@ -20,7 +15,6 @@ const pillars = [
     icon: BiWrench,
   },
   {
-    id: 'maintain',
     label: 'Maintain',
     tagline: 'Proactive operations prevent problems and protect infrastructure.',
     color: 'bg-brand-accent',
@@ -33,7 +27,6 @@ const pillars = [
     icon: BiShield,
   },
   {
-    id: 'enhance',
     label: 'Enhance',
     tagline: 'Strategic guidance ensures technology evolves with your organization.',
     color: 'bg-brand-navy-light',
@@ -55,45 +48,46 @@ export default function HowWeManage() {
         subtitle="InfoManage delivers services through a structured operational model that focuses on resolving issues quickly, preventing problems before they occur, and planning improvements over time."
       />
 
-      <div className="container mx-auto px-4 mb-12">
-        <p className="text-center text-2xl md:text-3xl font-heading font-bold text-brand-navy tracking-wide">
-          <span className="text-brand-navy">Fix</span>
-          <span className="text-brand-gray mx-3 md:mx-4">•</span>
+      <AnimateIn className="container mx-auto px-4 mb-12">
+        <p className="text-center text-2xl md:text-4xl font-heading font-bold text-brand-navy tracking-wide">
+          <span>Fix</span>
+          <span className="text-brand-gray mx-3 md:mx-5">•</span>
           <span className="text-brand-accent">Maintain</span>
-          <span className="text-brand-gray mx-3 md:mx-4">•</span>
+          <span className="text-brand-gray mx-3 md:mx-5">•</span>
           <span className="text-brand-navy-light">Enhance</span>
         </p>
-      </div>
+      </AnimateIn>
 
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {pillars.map(({ label, tagline, color, items, icon: Icon }) => (
-            <div
-              key={label}
-              className="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col hover:shadow-xl transition-shadow"
-            >
-              <div className={`${color} text-white px-8 py-10 text-center`}>
-                <Icon className="text-4xl mx-auto mb-4 opacity-90" />
-                <h3 className="font-heading text-4xl font-bold m-0">{label}</h3>
+          {pillars.map(({ label, tagline, color, items, icon: Icon }, i) => (
+            <AnimateIn key={label} delay={i * 120}>
+              <div className="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col h-full hover:shadow-xl transition-shadow">
+                <div className={`${color} text-white px-8 py-10 text-center`}>
+                  <Icon className="text-4xl mx-auto mb-4 opacity-90" />
+                  <h3 className="font-heading text-4xl font-bold m-0">{label}</h3>
+                </div>
+                <div className="p-8 flex flex-col flex-1">
+                  <p className="text-brand-muted mb-6 leading-relaxed">{tagline}</p>
+                  <ul className="list-none m-0 p-0 mt-auto space-y-3">
+                    {items.map((item) => (
+                      <li key={item} className="flex items-center gap-2 text-brand-navy font-medium text-sm">
+                        <BiCheckCircle className="text-brand-accent shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-              <div className="p-8 flex flex-col flex-1">
-                <p className="text-brand-muted mb-6 leading-relaxed">{tagline}</p>
-                <ul className="list-none m-0 p-0 mt-auto space-y-3">
-                  {items.map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-brand-navy font-medium">
-                      <BiCheckCircle className="text-brand-accent shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            </AnimateIn>
           ))}
         </div>
-        <p className="text-center text-brand-muted mt-12 max-w-2xl mx-auto leading-relaxed">
-          This structured approach ensures that IT environments remain reliable, secure, and
-          aligned with business needs.
-        </p>
+        <AnimateIn delay={400}>
+          <p className="text-center text-brand-muted mt-12 max-w-2xl mx-auto leading-relaxed">
+            This structured approach ensures that IT environments remain reliable, secure, and
+            aligned with business needs.
+          </p>
+        </AnimateIn>
       </div>
     </section>
   );

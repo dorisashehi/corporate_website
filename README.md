@@ -22,9 +22,27 @@ npm run preview
 
 - Primary: Navy `#003366`
 - Accent: `#0056a3`
-- Logo: `public/assets/img/infomanage-logo.png`
+- Logo: `public/assets/img/infomanage-logo.png` (horizontal SmallBlueLogo)
+
+## Images (`public/assets/img/`)
+
+| Asset | Use |
+|-------|-----|
+| `hero-illustration.png` | Hero (Arsha-style isometric IT) |
+| `it-team-illustration.png` | Outsourced IT section |
+| `illustration/operations-illustration.webp` | Operations |
+| `photos/*.jpg` | Team, technology, security, meeting (Unsplash) |
+| `bg/parallax-cta.webp` | Final CTA fixed parallax |
+| `cta/newsletter-figure.webp` | Strategic partnership |
+
+## Parallax & motion
+
+- **Scroll parallax bands** between sections (`ParallaxSection`) — like [Arsha](https://bootstrapmade.com/demo/Arsha/) CTA background movement
+- **Fixed parallax** on final CTA (`FixedParallaxCTA`) — Arsha `position: fixed` + `clip-path` technique
+- **Fade/slide on scroll** (`AnimateIn`) — similar to Arsha AOS animations
+- **Hero illustration float** — Arsha hero animation
 
 ## Sections
 
-Hero, Outsourced IT, How We Manage IT (Fix • Maintain • Enhance), Operations & Governance, Client Partnership, Service Plans, Strategic Partnership, Established & Trusted, CTA, Contact.
+Hero, Outsourced IT, parallax break, How We Manage IT, Operations, parallax break, Client Partnership, Service Plans, Strategic Partnership, Established, parallax CTA, Contact.
 # corporate_website

@@ -1,14 +1,11 @@
+import { FixedParallaxCTA } from '../ParallaxSection';
+import AnimateIn from '../AnimateIn';
+import { images } from '../../utils/images';
+
 export default function FinalCTA() {
   return (
-    <section className="py-20 md:py-28 bg-brand-navy text-white relative overflow-hidden">
-      <div
-        className="absolute inset-0 opacity-20"
-        style={{
-          background:
-            'linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.08) 50%, transparent 70%)',
-        }}
-      />
-      <div className="container mx-auto px-4 relative z-10 text-center max-w-3xl">
+    <FixedParallaxCTA image={images.parallaxCta} overlayClass="bg-brand-navy/88">
+      <AnimateIn className="text-center max-w-3xl mx-auto text-white">
         <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">
           Ready to Improve Your IT Operations?
         </h2>
@@ -30,7 +27,7 @@ export default function FinalCTA() {
             Contact InfoManage
           </a>
         </div>
-      </div>
-    </section>
+      </AnimateIn>
+    </FixedParallaxCTA>
   );
 }
